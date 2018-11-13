@@ -30,6 +30,9 @@ public class Product {
     @Column(nullable = false)
     private int mileage;
 
+    @OneToMany(mappedBy = "product")
+    private List<CartProduct> cartProductList;
+
     @ManyToMany
     @JoinTable(name = "product_category",
             joinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id") ,
@@ -38,5 +41,9 @@ public class Product {
 
     @OneToMany(mappedBy = "product")
     private List<Image> imageList;
+
+    @OneToMany(mappedBy = "product")
+    private List<OrderProduct> orderProductList;
+
 
 }

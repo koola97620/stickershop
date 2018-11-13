@@ -18,9 +18,7 @@ public class Cart {
     @OneToOne
     private Member member;
 
-    @ManyToMany
-    @JoinTable(name = "product_category",
-            joinColumns = @JoinColumn(name = "product_id", referencedColumnName = "id") ,
-            inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "id") )
-    private List<Product> productList;
+
+    @OneToMany(mappedBy = "cart")
+    private List<CartProduct> productList;
 }
