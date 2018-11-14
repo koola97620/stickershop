@@ -6,17 +6,17 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "order_product")
+@Table(name = "shopping_product")
 @Getter
 @Setter
-public class OrderProduct {
+public class ShoppingProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name="order_id")
-    private Order order;
+    @JoinColumn(name="shopping_id")
+    private Shopping shopping;
 
     @ManyToOne
     @JoinColumn(name="product_id")

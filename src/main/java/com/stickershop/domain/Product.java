@@ -43,7 +43,7 @@ public class Product {
     private List<Image> imageList;
 
     @OneToMany(mappedBy = "product")
-    private List<OrderProduct> orderProductList;
+    private List<ShoppingProduct> shoppingProductList;
 
 
 }

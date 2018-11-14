@@ -1,29 +1,23 @@
 package com.stickershop.domain;
 
+
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
-
 @Entity
-@Table(name = "rank")
+@Table(name = "shopping_status")
 @Getter
 @Setter
-public class Rank {
+public class ShoppingStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 30,nullable = false)
+    @Column
     private String name;
 
-    @Column
-    private int saleMoney;
-
-    @Column
-    private double saleRatio;
-
     @OneToOne
-    private Member member;
+    private Shopping shopping;
 }

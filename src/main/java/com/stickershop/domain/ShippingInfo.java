@@ -17,7 +17,7 @@ public class ShippingInfo {
     private Long id;
 
     @OneToOne
-    private Order order;
+    private Shopping shopping;
 
     @Column
     private String userName;

@@ -1,6 +1,5 @@
 package com.stickershop.domain;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +17,7 @@ public class Member {
     private String id;
 
     @Column(length = 30, nullable = false)
-    private String userName;
+    private String username;
 
     @Column(length = 50, nullable = false)
     private String email;
@@ -45,8 +44,8 @@ public class Member {
 
 
     @OneToOne(mappedBy = "member")
-    @JoinColumn(name="rank_id")
-    private Rank rank;
+    @JoinColumn(name="ranking_id")
+    private Ranking ranking;
 
     @ManyToMany
     @JoinTable(name="member_role",
@@ -57,14 +56,17 @@ public class Member {
 
 
     @OneToMany(mappedBy = "member")
-    private List<Order> orderList;
+    private List<Shopping> shoppingList;
 
 
 
     private String addr;
     private int zipCode;
     private String phone;
+
+    @Column(columnDefinition = "int default 0")
     private int miliage;
+
     private Date regDate;
     private Date modDate;
 
