@@ -41,6 +41,9 @@ public class Shopping {
     private ShippingInfo shippingInfo;
 
 
+    @OneToMany(mappedBy = "shopping")
+    private List<MemberCoupon> memberCouponList;
+
 
 
 

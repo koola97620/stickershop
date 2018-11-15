@@ -33,17 +33,20 @@ public class Member {
     private List<MemberCoupon> memberCouponList;
 
 
-    @OneToOne(mappedBy = "member" , fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="cart_id", referencedColumnName = "id")
     private Cart cart;
 
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name="member_product",
+            joinColumns = @JoinColumn(name="member_id", referencedColumnName = "id") ,
+            inverseJoinColumns = @JoinColumn(name="product_id" , referencedColumnName = "id"))
+    private Set<Product> favorites;
+
+
+
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="wishlist_id", referencedColumnName = "id")
-    private Wishlist wishlist;
-
-
-    @OneToOne(mappedBy = "member",fetch = FetchType.LAZY)
     @JoinColumn(name="ranking_id")
     private Ranking ranking;
 
