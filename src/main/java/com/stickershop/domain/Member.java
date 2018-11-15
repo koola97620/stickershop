@@ -29,25 +29,25 @@ public class Member {
     private String nickname;
 
 
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member",fetch = FetchType.LAZY)
     private List<MemberCoupon> memberCouponList;
 
 
-    @OneToOne(mappedBy = "member")
+    @OneToOne(mappedBy = "member" , fetch = FetchType.LAZY)
     @JoinColumn(name="cart_id", referencedColumnName = "id")
     private Cart cart;
 
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="wishlist_id", referencedColumnName = "id")
     private Wishlist wishlist;
 
 
-    @OneToOne(mappedBy = "member")
+    @OneToOne(mappedBy = "member",fetch = FetchType.LAZY)
     @JoinColumn(name="ranking_id")
     private Ranking ranking;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name="member_role",
             joinColumns = @JoinColumn(name="member_id", referencedColumnName = "id") ,
             inverseJoinColumns = @JoinColumn(name="role_id" , referencedColumnName = "id"))
@@ -55,7 +55,7 @@ public class Member {
 
 
 
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member",fetch = FetchType.LAZY)
     private List<Shopping> shoppingList;
 
 
@@ -64,7 +64,8 @@ public class Member {
     private int zipCode;
     private String phone;
 
-    @Column(columnDefinition = "int default 0")
+    //(columnDefinition = "int default 0")
+    @Column
     private int miliage;
 
     private Date regDate;

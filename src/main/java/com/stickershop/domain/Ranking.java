@@ -24,6 +24,6 @@ public class Ranking {
     @Column
     private double saleRatio;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private Member member;
 }
