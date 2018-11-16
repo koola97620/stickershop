@@ -16,9 +16,6 @@ public class ShippingInfo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    private Shopping shopping;
-
     @Column
     private String userName;
 

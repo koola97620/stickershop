@@ -7,10 +7,10 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "shopping_status")
+@Table(name = "order_status")
 @Getter
 @Setter
-public class ShoppingStatus {
+public class OrderStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,6 +18,4 @@ public class ShoppingStatus {
     @Column
     private String name;
 
-    @OneToOne
-    private Shopping shopping;
 }

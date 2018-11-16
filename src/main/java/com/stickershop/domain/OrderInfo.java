@@ -9,10 +9,10 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "shopping")
+@Table(name = "order_info")
 @Getter
 @Setter
-public class Shopping {
+public class OrderInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,8 +22,8 @@ public class Shopping {
     private Member member;
 
 
-    @OneToMany(mappedBy = "shopping")
-    private List<ShoppingProduct> shoppingProductList;
+    @OneToMany(mappedBy = "orderInfo")
+    private List<OrderInfoProduct> orderInfoProductList;
 
 
     @Column
@@ -32,16 +32,16 @@ public class Shopping {
     @Column
     private Date orderDate;
 
-    @OneToOne(mappedBy = "shopping")
+    @OneToOne
     @JoinColumn(name="order_status_id")
-    private ShoppingStatus shoppingStatus;
+    private OrderStatus orderStatus;
 
-    @OneToOne(mappedBy = "shopping")
+    @OneToOne
     @JoinColumn(name="shipping_info_id")
     private ShippingInfo shippingInfo;
 
 
-    @OneToMany(mappedBy = "shopping")
+    @OneToMany(mappedBy = "orderInfo")
     private List<MemberCoupon> memberCouponList;
 
 

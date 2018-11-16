@@ -6,7 +6,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "coupon")
@@ -16,9 +15,6 @@ public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @OneToMany
-    private List<MemberCoupon> memberCouponList;
 
 
     @Column(length = 100 , nullable = false)
@@ -44,6 +40,8 @@ public class Coupon {
 
     private Integer durationPeriod;
 
-    private int expireType;
+    @ManyToOne
+    @JoinColumn(name = "expiretype_id" , referencedColumnName = "id")
+    private ExpireType expireType;
 
 }

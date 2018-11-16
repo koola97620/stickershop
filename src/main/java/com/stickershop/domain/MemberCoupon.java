@@ -24,8 +24,8 @@ public class MemberCoupon {
     private Coupon coupon;
 
     @ManyToOne
-    @JoinColumn(name="shopping_id" , referencedColumnName = "id")
-    private Shopping shopping;
+    @JoinColumn(name="order_info_id" , referencedColumnName = "id")
+    private OrderInfo orderInfo;
 
     private Date regDate;
 

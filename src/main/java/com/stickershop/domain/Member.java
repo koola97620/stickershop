@@ -33,9 +33,8 @@ public class Member {
     private List<MemberCoupon> memberCouponList;
 
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="cart_id", referencedColumnName = "id")
-    private Cart cart;
+    @OneToMany(mappedBy = "member" , fetch = FetchType.LAZY)
+    private List<CartProduct> cartProductList;
 
 
     @ManyToMany(fetch = FetchType.LAZY)
@@ -46,7 +45,7 @@ public class Member {
 
 
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ranking_id")
     private Ranking ranking;
 
@@ -59,7 +58,7 @@ public class Member {
 
 
     @OneToMany(mappedBy = "member",fetch = FetchType.LAZY)
-    private List<Shopping> shoppingList;
+    private List<OrderInfo> orderInfoList;
 
 
 
