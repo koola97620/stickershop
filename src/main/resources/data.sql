@@ -8,9 +8,9 @@ insert into role(name) values('boardWrite');
 insert into role(name) values('boardDelete');
 
 -- insert ranking
-insert into ranking(name,sale_money,sale_ratio) values ("bronze",1000,0.1);
-insert into ranking(name,sale_money,sale_ratio) values ("silver",2000,0.15);
-insert into ranking(name,sale_money,sale_ratio) values ("gold",3000,0.2);
+insert into ranking(name,sale_money,sale_ratio) values ('bronze',1000,0.1);
+insert into ranking(name,sale_money,sale_ratio) values ('silver',2000,0.15);
+insert into ranking(name,sale_money,sale_ratio) values ('gold',3000,0.2);
 
 
 -- insert member
@@ -64,8 +64,10 @@ insert into coupon(cur_qty, total_qty, name, sale_money, sale_ratio,description,
 -- insert member_coupon  orderInfo id가 필요-->
 -- 기간 쿠폰의 경우 regdate + duration이 expire_date가 되어야 한다.-->
 -- 쿠폰만료일이 고정된 쿠폰의 경우엔 쿠폰의 expire_date 를 아래에 넣어주면 된다.-->
+-- insert into member_coupon(reg_date, expire_date, use_check , coupon_id, member_id)
+--  values(now(), date_add(now(),interval +30 day), 0, 1 , 'koola977');
 insert into member_coupon(reg_date, expire_date, use_check , coupon_id, member_id)
- values(now(), date_add(now(),interval +30 day), 0, 1 , 'koola977');
+ values(now(), now(), 0, 1 , 'koola977');
 insert into member_coupon(reg_date, expire_date, use_check , coupon_id, member_id)
  values(now(), '2018-12-31 23:59:59', 0, 2 , 'koola977');
 
