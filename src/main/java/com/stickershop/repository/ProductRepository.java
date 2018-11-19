@@ -15,6 +15,8 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
     @Query(value="select count(pro) from Product pro")
     public int countProduct();
 
+    @Query(value="select pro from Product pro join fetch pro.categoryList where pro.id= :id ")
+    public List<Product> getCategory(@Param("id")String id);
 
 
 

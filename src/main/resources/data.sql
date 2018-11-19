@@ -4,8 +4,12 @@
 insert into role(name) values('productUpload');
 insert into role(name) values('productDelete');
 insert into role(name) values('productUpdate');
+insert into role(name) values('productRead');
 insert into role(name) values('boardWrite');
 insert into role(name) values('boardDelete');
+insert into role(name) values('boardUpdate');
+insert into role(name) values('boardRead');
+
 
 -- insert ranking
 insert into ranking(name,sale_money,sale_ratio) values ('bronze',1000,0.1);
@@ -15,18 +19,36 @@ insert into ranking(name,sale_money,sale_ratio) values ('gold',3000,0.2);
 
 -- insert member
 insert into member(id,username,ranking_id,email,password,nickname,addr,zip_code,phone,miliage,reg_date,mod_date)
-  values('koola977','Choi',1,'koola@gmail.com','1234','Thresh','Newyork','12345','010-9923-3293',0,now(),now());
+  values('koola977','Choi',1,'koola@gmail.com','1234','Thresh','Newyork','12345','010-9923-3293',1220,now(),now());
 insert into member(id,username,ranking_id,email,password,nickname,addr,zip_code,phone,miliage,reg_date,mod_date)
-  values('koola','park',2,'koo@gmail.com','1234','Thresh1','seoul','12345','010-9923-1234',0,now(),now());
+  values('koola','park',2,'koo@gmail.com','1234','Thresh','seoul','12345','010-9923-1234',12310,now(),now());
 insert into member(id,username,ranking_id,email,password,nickname,addr,zip_code,phone,miliage,reg_date,mod_date)
-  values('koola123','Kim',3,'kla@gmail.com','1234','Thresh2','tokyo','12345','010-9923-1211',0,now(),now());
+  values('koola123','Kim',3,'kla@gmail.com','1234','Ari','tokyo','12345','010-9923-1211',13120,now(),now());
+insert into member(id,username,ranking_id,email,password,nickname,addr,zip_code,phone,miliage,reg_date,mod_date)
+  values('ilove503','Park',1,'sunsil@nate.com','1234','아임쓰레기','tokyo','12345','010-9911-1211',0,now(),now());
+insert into member(id,username,ranking_id,email,password,nickname,addr,zip_code,phone,miliage,reg_date,mod_date)
+  values('ilovekimchi','Paul',3,'paul@naver.com','123234','mrPaul','Otawa','01231','010-1231-1211',500000,now(),now());
+insert into member(id,username,ranking_id,email,password,nickname,addr,zip_code,phone,miliage,reg_date,mod_date)
+  values('ihatechina','brucelee',3,'lee@china.com','qwer1234','mrlee','beijing','44212','010-1231-1211',50000,now(),now());
+insert into member(id,username,ranking_id,email,password,nickname,addr,zip_code,phone,miliage,reg_date,mod_date)
+  values('iliveinseoul','sunsil',1,'sunsil2@daum.net','qwer121234','garbage112','newyork','01212','010-1341-1211',10000,now(),now());
+insert into member(id,username,ranking_id,email,password,nickname,addr,zip_code,phone,miliage,reg_date,mod_date)
+  values('sehwacjy','cjy',3,'sehwacjy@empal.com','qwerqwer234','jdragon','kamloops','02212','010-1341-1211',690000,now(),now());
+
+
 
 -- insert member_role
 insert into member_role(member_id, role_id) values('koola977',1);
 insert into member_role(member_id, role_id) values('koola977',2);
 insert into member_role(member_id, role_id) values('koola977',3);
-insert into member_role(member_id, role_id) values('koola',4);
+insert into member_role(member_id, role_id) values('ilove503',8);
 insert into member_role(member_id, role_id) values('koola',5);
+insert into member_role(member_id, role_id) values('koola',8);
+insert into member_role(member_id, role_id) values('koola123',8);
+insert into member_role(member_id, role_id) values('ilovekimchi',8);
+insert into member_role(member_id, role_id) values('ihatechina',8);
+insert into member_role(member_id, role_id) values('iliveinseoul',8);
+insert into member_role(member_id, role_id) values('sehwacjy',8);
 
 -- insert order_status
 insert into order_status(name) values('결제대기');
