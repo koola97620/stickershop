@@ -25,4 +25,10 @@ public interface MemberRepository extends JpaRepository<Member,String> {
     @Query(value="select me.id, me.email, me.phone from Member me where me.id= :id")
     public Member findByIdContaining3(@Param("id") String id);
 
+
+    @Query(value = "select me from Member me join fetch me.roleSet where me.email = :email")
+    public Member getMember(@Param("email") String email);
+
+
+
 }

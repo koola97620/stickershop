@@ -14,25 +14,11 @@ import java.util.List;
 
 @Controller
 public class HomeController {
-    private MemberService memberService;
-
-    public HomeController(MemberService memberService) {
-        this.memberService = memberService;
-    }
 
     @GetMapping("/")
     public String index() {
         return "index";
     }
 
-    @GetMapping("/list")
-    public String list(ModelMap modelMap,
-                       @PageableDefault(sort={"id"},direction = Sort.Direction.DESC,size=2) Pageable pageable) {
-        List<Member> memberList = memberService.getMemberList();
-        modelMap.addAttribute("memberList", memberList);
 
-        Page<Member> members = memberService.getFindAllPageable(pageable);
-        modelMap.addAttribute("members", members);
-        return "list";
-    }
 }

@@ -30,4 +30,11 @@ public class MemberServiceImpl implements MemberService{
         Page<Member> memberList = memberRepository.findAll(pageable);
         return memberList;
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Member getMember(String email) {
+        return memberRepository.getMember(email);
+    }
+
 }

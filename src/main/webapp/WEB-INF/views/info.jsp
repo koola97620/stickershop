@@ -9,9 +9,12 @@
     <title>list</title>
 </head>
 <body>
-<h1><a href="/members/list">go list</a></h1>
 
+
+사용자 info!
 <br>
+
+
 
 </body>
 </html>

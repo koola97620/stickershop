@@ -11,4 +11,7 @@ public interface MemberService {
     public List<Member> getMemberList();
 
     public Page<Member> getFindAllPageable(Pageable pageable);
+
+    public Member getMember(String email);
+
 }
