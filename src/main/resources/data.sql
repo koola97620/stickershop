@@ -152,3 +152,4 @@ insert into cart_product(member_id,product_id,quantity) values('koola977',3,1);
 insert into member_product(member_id, product_id) values('koola977',1);
 insert into member_product(member_id, product_id) values('koola977',2);
 insert into member_product(member_id, product_id) values('koola',3);
+insert into member_product(member_id, product_id) values('koola12',1);
